@@ -1,12 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+    <title>MITH</title>
+    <link rel="shortcut icon" type="image/x-icon" href="./media/MITH.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./css/index.css">
 </head>
-<body>
-    
+<body class="light-theme">
+    <div class="c_main_bar">
+        <header class="main_bar">
+            <div class="c_nav">
+                <div class="c_nav_toggle">
+                    <button class="primary_nav_toggle" aria-expanded="true">
+                    </button>
+                    <div class="page_name">
+                        <span>MITH<sup>arg</sup></span>
+                    </div>
+                </div>
+
+                <nav>
+                    <ul class="primary_navigation" data-visible="true">
+                        <li>
+                            <a class="c_nav_item" href="https://github.com/MITH-arg/MITH-arg" target="_blank">
+                                <img src="./media/25231.png" alt="">
+                                <span>Repositorio</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="c_nav_item" href="https://discord.gg/uBwZ38D8Kx" target="_blank">
+                                <img src="./media/discord-icon.svg" alt="">
+                                <span>Discord</span>
+                            </a>
+                        </li>
+                        <li>
+                            <button class="c_nav_item theme-toggle">
+                                <img src="./media/color-scheme.png" alt="">
+                                <span>Cambiar tema</span>
+                            </button>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="c_logo">
+            </div>
+
+            <div class="c_search">
+                <input type="text" name="" id="" placeholder="Buscar">
+                <button>
+                    <img class="fix_to_container" src="./media/buscar.png" alt="search icon">
+                </button>
+            </div>
+        </header>
+    </div>
+
+    <div class="c_main_content">
+        <main class="main_content">
+            <div class="presentation">
+                <h1>Mi Idea,
+                    Tu Herramienta
+                </h1>
+                <p>Este es un lugar donde podras encontrar programas, paginas, herramientas
+                    desarrolladas por otros programadores con la intencion de contribuir
+                    con sus pares.
+                    <br><br>
+                    Solo busca lo que necesites, si lo encontras que te sea de ayuda :)
+                </p>
+                <h6>Pd: clickeando la imagen del projecto tambien te redirecciona</h6>
+            </div>
+            <ul class="projects_preview">
+                <template id="project-template">
+                    <li class="project">
+                        <a class="p_page" href="" target="_blank" rel="noopener noreferrer"><img class="p_image" src="" alt=""></a>
+                        <h2 class="p_header"></h2>
+                        <p class="p_description"></p>
+                        <h6 class="p_credit">Hecho por: <a href="" target="_blank" rel="author noopener noreferrer"></a></h6>
+                    </li>
+                </template>
+            </ul>
+        </main>
+    </div>
+
+    <script type="module" src="./js/pageManager.js"></script>
+    <script type="module" src="./js/index.js"></script>
 </body>
 </html>

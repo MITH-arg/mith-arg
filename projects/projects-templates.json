@@ -1,0 +1,22 @@
+{
+    "projects": [
+        {
+            "name": "RobotScript",
+            "id": "rs",
+            "author": "Josue Suarez",
+            "author_page": "http://github.com/J-Josu",
+            "project_page": "https://j-josu.github.io/RobotScript/",
+            "description": "Este es un lindo proyecto deah",
+            "img_name" : "rs_screenshot.png"
+        },
+        {
+            "name": "Mega Conversor OC/AC",
+            "id": "mega-conversor",
+            "author": "Fabian Martinez",
+            "author_page": "https://github.com/Fabian-Martinez1",
+            "project_page": "https://fabian-martinez1.github.io/Mega-Conversor-OC/",
+            "description": "Este es un lindo proyecto deah",
+            "img_name" : "mega_conversor_screenshot.png"
+        }
+    ]
+}

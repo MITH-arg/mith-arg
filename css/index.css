@@ -1,0 +1,264 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+button, a {
+    all: unset;
+}
+ul {
+    list-style: none;
+}
+
+
+
+/* variables */
+:root {
+    --clr-bg-1: hsl(0, 100%, 50%);
+    --bg-1: hsl(0, 0%, 1%);
+    /* --clr-dev: hsl(300, 100%, 50%); */
+}
+
+.light-theme {
+    --bg-1 : hsl(0, 0%, 95%);
+    /* --bg-2 : hsl(0, 0%, 80%);
+    --bg-3 : hsl(0, 0%, 70%); */
+    --fc-1 : hsl(0, 0%, 10%);
+    --fc-2 : hsl(0, 0%, 20%);
+    --br-1 : hsl(0, 0%, 50%);
+}
+
+.dark-theme {
+    --bg-1 : hsl(0, 0%, 5%);
+    /* --bg-2 : hsl(0, 0%, 20%);   
+    --bg-3 : hsl(0, 0%, 30%); */
+    --fc-1 : hsl(0, 0%, 90%);
+    --fc-2 : hsl(0, 0%, 80%);
+    --br-1 : hsl(0, 0%, 50%);
+}
+
+
+/* general */
+.fix_to_container {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--fc-1);
+    --main-bar-height: 3rem;
+    background-color: var(--bg-1);
+}
+
+
+.c_main_bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: var(--main-bar-height);
+    border-bottom: 1px inset var(--br-1);
+}
+
+.main_bar {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    background: var(--bg-1);
+    --padding: 2rem;
+}
+
+.c_nav {
+    position: relative;
+    display: flex;
+}
+.c_nav_toggle {
+    position: relative;
+    left: var(--padding);
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+.c_nav_toggle button {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: block;
+    position: relative;
+    z-index: 3000;
+    background: url("../media/menu.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.c_nav > button[aria-expanded="true"]{
+    background: url("../media/cancel.png");
+    background-size: cover;
+}
+
+.c_nav_toggle .page_name {
+    position: relative;
+    left: 1rem;
+    font-weight: 900;
+}
+.c_nav_toggle .page_name sup {
+    position: relative;
+    margin-left: 0.5ch;
+    font-weight: 100;
+    font-size: 0.75em;
+}
+
+
+.c_nav .primary_navigation {
+    position: absolute;
+    top: calc(100% + 1px);
+    left: 0;
+    height: calc(100vh - var(--main-bar-height));
+    background: var(--bg-1);
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    padding-top: var(--padding);
+    padding-inline: var(--padding);
+    transform: translateX(-200%);
+    transition: transform 350ms ease-out;
+    border-right: 1px inset var(--br-1);
+    color: var(--fc-1);
+
+    background: var(--bg-1);
+}
+
+/* .c_nav nav::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: -1;
+    background: hsl(0, 0%, 0%, 50%);
+} */
+
+
+.c_nav_item {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    height: 2rem;
+    width: max-content;
+    align-items: center;
+}
+.c_nav_item img{
+    height: 100%;
+    aspect-ratio: 1;
+}
+
+
+
+
+
+.primary_navigation a {
+    color: var(--fc-1);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 1000;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+.primary_navigation a:is(:link,:visited) {
+    color: currentColor;
+}
+
+.primary_navigation[data-visible="true"] {
+    transform: translateX(0%);
+}
+
+
+
+.c_logo {
+    grid-column: 2 / span 1;
+    grid-row: 1;
+    display: flex;
+    align-items: center;
+}
+
+.c_search {
+    width: fit-content;
+    display: flex;
+    align-items: center;
+}
+.c_search input[type='text'] {
+    width: 100%;
+    height: 1.5rem;
+}
+.c_search button {
+    height: 1.5rem;
+}
+
+
+
+
+
+
+.main_content {
+    margin-inline: 5%;
+    margin-block: 10%;
+    grid-row: 2 / span 1;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+    background-color: var(--bg-3);
+}
+
+.presentation {
+    background-color: var(--bg-1);
+    margin-block: 5vh;
+    text-align: center;
+    outline: 1px outset var(--clr-dev);
+}
+.presentation h1 {
+    background-color: var(--bg-1);
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+}
+.presentation h6 {
+    background-color: var(--bg-1);
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.projects_preview {
+    display: flex;
+    flex-direction: column;
+    gap: 5vh;
+    background-color: var(--bg-1);
+}
+.project {
+    background-color: var(--bg-1);
+    outline: 1px outset var(--clr-dev);
+}
+.project p {
+    color: var(--fc-2);
+}
+
+.p_header {
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    margin-left: 0.5rem;
+}
+.p_credit {
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    margin-left: 0.5rem;
+}
+.p_description {
+    margin-top: 0.25rem;
+    margin-left: 0.75rem;
+}
+
