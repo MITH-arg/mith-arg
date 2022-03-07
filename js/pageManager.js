@@ -66,11 +66,9 @@ const pageManager = (function () {
         });
     }
 
-    fetch('../projects/projects-templates.json')
+    fetch('projects-templates.json')
         .then(response => response.json())
-        .then(data => {
-            loadProjects(data.projects);
-        });
+        .then(data => loadProjects(data.projects));
     
     return {
 
