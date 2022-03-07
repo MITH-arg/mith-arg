@@ -126,7 +126,7 @@ body {
     flex-direction: column;
     padding-top: var(--padding);
     padding-inline: var(--padding);
-    transform: translateX(-200%);
+    transform: translateX(-100%);
     transition: transform 350ms ease-out;
     border-right: 1px inset var(--br-1);
     color: var(--fc-1);
@@ -134,16 +134,17 @@ body {
     background: var(--bg-1);
 }
 
-/* .c_nav nav::before {
+.primary_navigation[data-visible="true"]::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
+    left: 100%;
     height: 100vh;
     width: 100vw;
     z-index: -1;
     background: hsl(0, 0%, 0%, 50%);
-} */
+    transition: none;
+}
 
 
 .c_nav_item {
@@ -247,6 +248,12 @@ body {
     color: var(--fc-2);
 }
 
+.p_page {
+    width: 100%;
+}
+.p_image {
+    max-width: 100%;
+}
 .p_header {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
