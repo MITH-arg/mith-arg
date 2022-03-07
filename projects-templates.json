@@ -3,8 +3,12 @@
         {
             "name": "RobotScript",
             "id": "rs",
-            "author": "Josue Suarez",
-            "author_page": "http://github.com/J-Josu",
+            "author": [
+                {
+                    "name": "Josue Suarez",
+                    "page": "http://github.com/J-Josu"
+                }
+            ],
             "project_page": "https://j-josu.github.io/RobotScript/",
             "description": "Este es un lindo proyecto deah",
             "img_name" : "rs_screenshot.png"
@@ -12,11 +16,32 @@
         {
             "name": "Mega Conversor OC/AC",
             "id": "mega-conversor",
-            "author": "Fabian Martinez",
-            "author_page": "https://github.com/Fabian-Martinez1",
+            "author": [
+                {
+                    "name": "Fabian Martinez",
+                    "page": "https://github.com/Fabian-Martinez1"
+                }
+            ],
             "project_page": "https://fabian-martinez1.github.io/Mega-Conversor-OC/",
             "description": "Este es un lindo proyecto deah",
             "img_name" : "mega_conversor_screenshot.png"
+        },
+        {
+            "name": "VonSim",
+            "id": "vonsim",
+            "author": [
+                {
+                    "name": "Facundo Quiroga",
+                    "page": "https://github.com/facundoq"
+                },
+                {
+                    "name": "Manuel (bb)",
+                    "page": "https://github.com/manuelbb"
+                }
+            ],
+            "project_page": "https://vonsim.github.io/",
+            "description": "Este es un lindo proyecto deah",
+            "img_name" : "vonsim_screenshot.png"
         }
     ]
 }

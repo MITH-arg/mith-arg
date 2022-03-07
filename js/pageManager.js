@@ -39,7 +39,7 @@ const pageManager = (function () {
     function createProject(tFragment, data) {
         const newP = tFragment.cloneNode(true);
 
-        newP.querySelector('.p_page').href = `${data.project_page}`;
+        newP.querySelectorAll('.p_page').forEach(e => e.href = `${data.project_page}`);
 
         const image = newP.querySelector('.p_image');
         image.src = `./projects/${data.id}/${data.img_name}`
@@ -48,9 +48,21 @@ const pageManager = (function () {
 
         newP.querySelector('.p_description').innerText = `${data.description}`;
 
-        const author = newP.querySelector('.p_credit a');
-        author.href = `${data.author_page}`;
-        author.innerText = `${data.author}`;
+        const authors = newP.querySelector('.p_credit');
+        const authorTemplate = newP.querySelector('.p_credit a');
+        authors.removeChild(authorTemplate);
+        
+        for (let i = 0; i < data.author.length; i++) {
+            const authorData = data.author[i];
+            const newAuthor = authorTemplate.cloneNode(true);
+            newAuthor.href = `${authorData.page}`;
+            newAuthor.innerText = `${authorData.name}`;
+            authors.appendChild(newAuthor);
+
+            const punctuation = document.createElement('span');
+            punctuation.innerText = i < (data.author.length - 1)? ', ':'.';
+            authors.appendChild(punctuation);
+        }
 
         return newP;
     }
