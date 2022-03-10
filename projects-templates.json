@@ -42,6 +42,19 @@
             "project_page": "https://vonsim.github.io/",
             "description": "Este es un lindo proyecto deah",
             "img_name" : "vonsim_screenshot.png"
+        },
+        {
+            "name": "UNLP E. Links",
+            "id": "e-links",
+            "author": [
+                {
+                    "name": "Josue Suarez",
+                    "page": "http://github.com/J-Josu"
+                }
+            ],
+            "project_page": "https://github.com/MITH-arg/UNLP-E-Links",
+            "description": "Este es un lindo proyecto deah",
+            "img_name" : "e_links_screenshot.png"
         }
     ]
 }

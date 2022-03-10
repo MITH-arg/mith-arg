@@ -169,15 +169,14 @@ body {
 
 
 .primary_navigation a {
-    color: var(--fc-1);
     text-decoration: none;
     font-size: 1rem;
     font-weight: 1000;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
-.primary_navigation a:is(:link,:visited) {
-    color: currentColor;
+.primary_navigation a span {
+    color: var(--fc-1);
 }
 
 .primary_navigation[data-visible="true"] {
@@ -267,6 +266,9 @@ body {
     margin-top: 0.25rem;
     margin-bottom: 0.25rem;
     margin-left: 0.5rem;
+}
+.p_credit a {
+    color: var(--fc-1);
 }
 .p_description {
     margin-top: 0.25rem;
