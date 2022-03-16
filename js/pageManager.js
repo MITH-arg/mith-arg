@@ -36,13 +36,21 @@ const pageManager = (function () {
     
     btnThemeToggle.addEventListener('click', toggleTheme);
 
-    function createProject(tFragment, data) {
+
+    let projects = [];
+
+    function createProject(tFragment, data, i) {
         const newP = tFragment.cloneNode(true);
+
+        const container = newP.querySelector('.project');
+        container.setAttribute('id',data.id);
+
+        if (i % 2 === 1) container.classList.toggle('right'); 
 
         newP.querySelectorAll('.p_page').forEach(e => e.href = `${data.project_page}`);
 
         const image = newP.querySelector('.p_image');
-        image.src = `./projects/${data.id}/${data.img_name}`
+        image.src = `./projects/${data.id}/${data.img_name}`;
 
         newP.querySelector('.p_header').innerText = `${data.name}`;
 
@@ -72,16 +80,70 @@ const pageManager = (function () {
         const tFragment = template.content;
         const pList = document.querySelector('.projects_preview');
 
-        data.forEach(projectData => {
-            const newP = createProject(tFragment, projectData);
+        for (let i = 0; i < data.length; i++) {
+            const projectData = data[i];
+            const newP = createProject(tFragment, projectData, i);
             pList.appendChild(newP);
-        });
+        }
     }
 
     fetch('projects-templates.json')
         .then(response => response.json())
-        .then(data => loadProjects(data.projects));
+        .then(data => {
+            projects = data.projects;
+            loadProjects(projects);
+        });
     
+    
+    function matchResults(input) {
+        const container = document.querySelector('.c_search_results');
+        if (input.length === 0) {
+            container.innerHTML = '';
+            return;
+        }
+
+        const keyWords = input.split(/\s+/).filter(e => e !== '');
+        
+        let html = '';
+        projects.forEach(p => {
+            let nMatchs = 0;
+            for (let i=0; i< keyWords.length; i++) {
+                const w = keyWords[i];
+                const rgx = new RegExp(w, 'i');
+
+                if (p.name.match(rgx) || p.description.match(rgx) || p.author[0].name.match(rgx)) {
+                    nMatchs++;
+                }
+                else break;
+            }
+            if (nMatchs === keyWords.length) {
+                html += `<a href="#${p.id}">${p.name}</a>`;
+            }
+        });
+        container.innerHTML = html;
+    }
+
+    const search = {
+        container : document.querySelector('.c_search_input'),
+        input : document.querySelector('#searchInput')
+    }
+    
+    search.input.addEventListener('input', () => matchResults(search.input.value));
+    
+    function goToFirstResult() {
+        const firstResult = document.querySelector('.c_search_results').firstChild;
+        if (!firstResult) return;
+        firstResult.click();
+    }
+
+    search.input.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter') goToFirstResult();
+    });
+
+    const btnSearch = document.querySelector('#btnSearch');
+
+    btnSearch.addEventListener('click', goToFirstResult);
+
     return {
 
     };

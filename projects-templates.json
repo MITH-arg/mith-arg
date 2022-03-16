@@ -10,7 +10,7 @@
                 }
             ],
             "project_page": "https://j-josu.github.io/RobotScript/",
-            "description": "Este es un lindo proyecto deah",
+            "description": "RobotScript es el R-Info 2.0 en la web.\nEs un editor preparado para escribir en el lenguage de R-Info con las herramientas de un editor actual y ademas incluye el entorno de prueba del programa que esta siendo escrito.",
             "img_name" : "rs_screenshot.png"
         },
         {
@@ -23,7 +23,7 @@
                 }
             ],
             "project_page": "https://fabian-martinez1.github.io/Mega-Conversor-OC/",
-            "description": "Este es un lindo proyecto deah",
+            "description": "Cansado de el pasaje de numeros de una representacion a otra?\nEsta herramienta lo hace por vos, ademas te muestra mas datos de los que necesitas calcular.",
             "img_name" : "mega_conversor_screenshot.png"
         },
         {
@@ -40,21 +40,21 @@
                 }
             ],
             "project_page": "https://vonsim.github.io/",
-            "description": "Este es un lindo proyecto deah",
+            "description": "Siendo una beta, esta herramienta te devuelve las ganas de programar asembler que el simulador msx88 te robo al comenzar el semestre.",
             "img_name" : "vonsim_screenshot.png"
         },
         {
-            "name": "UNLP E. Links",
-            "id": "e-links",
+            "name": "EI Links",
+            "id": "ei-links",
             "author": [
                 {
                     "name": "Josue Suarez",
                     "page": "http://github.com/J-Josu"
                 }
             ],
-            "project_page": "https://github.com/MITH-arg/UNLP-E-Links",
-            "description": "Este es un lindo proyecto deah",
-            "img_name" : "e_links_screenshot.png"
+            "project_page": "https://github.com/MITH-arg/EI-Links",
+            "description": "Simplemente un pack de links en forma de extension para ingresantes en una carrera de informatica o no tan ingresantes.",
+            "img_name" : "ei_links_screenshot.png"
         }
     ]
 }

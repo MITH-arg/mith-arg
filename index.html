@@ -50,12 +50,12 @@
                 </nav>
             </div>
 
-            <div class="c_logo">
-            </div>
-
             <div class="c_search">
-                <input type="text" name="" id="" placeholder="Buscar">
-                <button>
+                <div class="c_search_input">
+                    <input type="text" name="" id="searchInput" placeholder="Buscar">
+                    <div class="c_search_results"></div>
+                </div>
+                <button id="btnSearch">
                     <img class="fix_to_container" src="./media/buscar.png" alt="search icon">
                 </button>
             </div>
@@ -79,10 +79,14 @@
             <ul class="projects_preview">
                 <template id="project-template">
                     <li class="project">
-                        <a class="p_page" href="" target="_blank" rel="noopener noreferrer"><img class="p_image" src="" alt=""></a>
-                        <a class="p_page" href="" target="_blank" rel="noopener noreferrer"><h2 class="p_header"></h2></a>
-                        <p class="p_description"></p>
-                        <h6 class="p_credit">Hecho por: <a href="" target="_blank" rel="author noopener noreferrer"></a></h6>
+                        <div class="p_section">
+                            <a class="p_page" href="" target="_blank" rel="noopener noreferrer"><img class="p_image" src="" alt=""></a>    
+                        </div>
+                        <div class="p_section p_text">
+                            <a class="p_page" href="" target="_blank" rel="noopener noreferrer"><h2 class="p_header"></h2></a>
+                            <p class="p_description"></p>
+                            <h6 class="p_credit">Hecho por: <a href="" target="_blank" rel="author noopener noreferrer"></a></h6>
+                        </div>
                     </li>
                 </template>
             </ul>
